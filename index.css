@@ -1,0 +1,73 @@
+.loader-div {
+  /* absolute inset-0 flex items-center justify-center bg-slate-200/20 backdrop-blur-sm */
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+  background-color: rgb(226 232 240);
+}
+
+.loader {
+  width: 45px;
+  aspect-ratio: 0.75;
+  --c: no-repeat linear-gradient(theme(colors.stone.800) 0 0);
+  background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+  background-size: 20% 50%;
+  animation: loading 1s infinite linear;
+}
+
+@keyframes loading {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
+}
+
+.layout {
+  /* // <div className="grid h-screen grid-rows-[auto_1fr_auto]"> */
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+/* <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Home movies={movies} />}></Route>
+          <Route path="/Trailer/:ytTrailerId" element={<Trailer />}></Route>
+          <Route
+            path="/Reviews/:movieId"
+            element={
+              <Reviews
+                getMovieData={getMovieData}
+                movie={movie}
+                reviews={reviews}
+                setReviews={setReviews}
+              />
+            }
+          ></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/signup" element={<SignUp />}></Route>
+          <Route path="/watchlist" element={<NotFound />}></Route>
+        </Route>
+      </Routes> */
+
+.nav-link-css {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link-css a {
+  list-style: none;
+  color: #fff;
+}
